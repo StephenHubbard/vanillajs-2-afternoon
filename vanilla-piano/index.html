@@ -49,6 +49,9 @@
                     <p>O</p>
                     <p>P</p>
                 </div>
+                <div class="box">
+                    <p id="game">A</p>
+                </div>    
             </div>
         </div>
 
@@ -109,23 +112,9 @@
         <audio data-key="48" src="./pianoSounds/high_a_sharp.mp3"></audio>
         <audio data-key="112" src="./pianoSounds/high_b.mp3"></audio>
     </main>
-
+    
 </body>
 
-<script>
-
-window.addEventListener("keypress", function(keyPressEvent) {
-  const tone = document.querySelector(`audio[data-key="${keyPressEvent.keyCode}"]`);
-  if (!tone) return;
-  const pianoKey = document.querySelector(`.pianoKey[data-key="${keyPressEvent.keyCode}"]`);
-  tone.currentTime = 0;
-  pianoKey.classList.add("pressed");
-  tone.play();
-  setTimeout(function() {
-    pianoKey.classList.remove("pressed");
-  }, 300);
-});
-
-</script>
+<script src='index.js'></script>
 
 </html>
